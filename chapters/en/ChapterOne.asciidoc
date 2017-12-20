@@ -1,0 +1,100 @@
+== A Tsunami of Innovation
+The following text is an edited transcript of Andreas M. Antonopoulos speaking at the _3rd Hackers' Congress Paralelni Polis; Prague, Czech Republic; September 2016_
+
+Video Link: https://youtu.be/n2yD1PSWBU0
+
+While this talk is not included in The Internet of Money book series, it's reflective of the type, tone, and readability of the content that is included there. Enjoy!
+
+=== Permissionless Innovation
+
+Today we're going to talk about innovation in open systems and how it leads to massive change. One of the defining characteristics of the Bitcoin blockchain, but also of other open blockchain systems, is something we call "permissionless innovation."
+
+Permissionless innovation is the idea that -- in a system which is decentralized, where people can connect to the system without asking for permission, where they can create their own applications without asking for permission, where they can launch these applications and use the platform without asking for permission -- something magical happens.
+
+The best example of this, of course, is the Internet. On the Internet, you don't need permission to create a new application. You can write an application protocol, assign it port numbers, distribute binary or source code and anyone can run it. And if they run it, they become your market for that application.
+
+==== A Market for Two, A Market for All
+
+What is the minimum market size you need to run an application on the Internet? Two. Two nodes, two people, two systems. As long as two systems want to use a protocol to communicate with each other, that is an application. That is an application market. That is the basis for running a new application and you don't need anyone's permission to innovate on this system.
+
+Why is this important? Because in closed and permissioned systems, innovation is determined by the least common denominator. If you want to run an application on the phone company's network, you have to find a way to persuade them that this is an application that will be broadly used by millions of people who are participating in their network. You have to ask for permission, and only if your application has a very large market share will it ever run.
+
+The essence of permissionless innovation is that two things happen simultaneously. First, it creates the platform for micro-innovation, innovation for a market of two, a special-purpose application that no one in the world cares about except for these two people or these two systems. You can micro-innovate in a tiny environment and create exciting new applications for which the only two people who are excited are the ones participating in that application. Hyperlocal micro-innovation.
+
+At the very same time, it's also a platform for macro/global innovation. The very same applications that appeal to two people can appeal to two thousand people, twenty thousand people, two hundred thousand people, two million people, two billion people. You'll probably need to optimize the code a bit, but you have the possibility of simultaneously appealing to an audience as small as two, all the way up to a global audience, without needing anyone's permission.
+
+==== Why Big Markets Underestimate Potential
+
+This critical function is offered by Bitcoin and other open blockchains by virtue of open access, by virtue of a neutral platform that is not controlled by a central entity, by virtue of being able to use that platform to develop your own applications. The effect is something that people often underestimate.
+
+We've seen big markets underestimate the possibility of innovation on the Internet. There's a reason why. If you're a big bank or a big corporation, and you're paying a thousand very expensive, highly-trained professional developers, it's easy to underestimate this form of innovation. You have "the cream of the crop," you have "the best of the best," innovating for you in a focused and directed manner.
+
+How could anyone compete with that budget, that marketing, that infrastructure, that support? It's almost ridiculous to think decentralized innovation could work on a large scale. They think, "Maybe you could do it for things that are not important. You can play with your little internet toys, we have important work to do here in our large corporation."
+
+==== By the Community, For the Community
+
+Then one day, some bored student at the University of Finland -- who can't afford to buy Microsoft Windows -- comes up with one of these ridiculous ideas: 'I'm going to write a scalable, multiprocessing operating system that competes with UNIX.' The only response to that, by any sane individual, is "that's ridiculous. There's no way that will ever work."
+
+Twenty years later, this so-called ridiculous idea, Linux has completely taken over every data center, every computer operating system. Most of the people in this room are running it underneath their Android operating system, which is really just Linux built-up.
+
+This audacity that you can out-innovate the largest players on the planet combines with something really important. Passionate interest and deep knowledge of the community of your users is most powerful when the developers are part of the community of the users. When you have people who are developing an application that is for their own interest, that they have an emotional attachment to, that they feel passion for, they will commit an enormous amount of effort into building that and treat it with great care.
+
+Why? Because at the end of it, software is art. Just like an artist, if you lack creativity, if you lack that spark, you're never going to create great art. No matter how many in-house artists a corporation hires, without the spark, the art will be empty, it will be soulless. That's what happens to innovation; when innovation is brought into large companies, it goes there to die. When they send their employees to four-hour workshops and seminars on a Wednesday afternoon to teach them how to think creatively, innovation dies. Creativity dies.
+
+=== Death by Bureaucracy
+
+If, by some miracle, an inspired creator arises from within the corporation and creates something truly unique -- creative, disruptive, expressive -- the entire mechanism of bureaucracy will stomp down on that idea and kill it very quickly. "Tommy, we love your idea and creativity. This is really a fantastic invention you've brought to us. Now, we have conducted a focus group and assembled a committee. We don't want to interfere with your creative process, but we have a few minor suggestions to help it be more broadly appealing among our customers and more in line with our strategic goals." That is the corporate sound of *stomp* on creativity. By the time that idea comes out of committee, it is a pale image, a skeleton, of what it was. Everything good, creative, and wonderful about it has been sucked out; what's left is a soulless corporate piece of shit.
+
+Yet, when presented with decentralized innovation, when shown the potential of everyone on the planet independently being able to innovate on the Internet, to create content, to create beautiful works of art, to contribute to human knowledge... when presented with the idea that an open blockchain allows everyone in the world to create applications -- they underestimate it.
+
+They cannot fathom how an unruly mess of untrained, untutored, and unpaid volunteers can ever compete with their finely-geared machine. Every time, they miss the point. This happens again and again throughout history. You'd think by now, after twenty years of observing the Internet at work, this lesson would be learned. But instead what you see are corporate organizations and governments having innovation workshops, speaking about "disrupting from within" and similarly empty talk.
+
+A couple of days ago we did a hackathon. There I found out that one of the key contributors to an amazing piece of software revealed himself to be a fourteen-year-old kid from London with no formal training in programming. He is outclassing many of the professional programmers in this space with passion. That is the most dangerous form of competition a company can face, that is unstoppable.
+
+==== Here's to the Crazy Ones
+
+Here's why it's easy to underestimate the potential for innovation. Place two systems side-by-side. One of them has a two-hundred-year tradition of slow, careful, and methodical development, institutionalized knowledge, and a solid foundation of 'trust': the banking system. Then you bring this rag-tag group of weirdo anarchists -- I'm looking at YOU. People with funny haircuts, too many piercings, and weird t-shirts, who can't wear a suit. You say, "We're going to re-invent banking." What can they do but laugh, right?
+
+The first version of what you present to the world is woefully inadequate. It's kludgy, it's difficult to use, it hasn't been tested by a focus group. The design sucks completely. They compare the two and say, "This is what they've done and this is what took us two hundred years to do." They laugh because there's no chance this little rag-tag group of misfits is ever possibly going to compete with the millions and billions of dollars in their budget.
+
+But what's missing is the most important part of the equation. When everyone can innovate without permission, and when the outcome of their innovation is open-sourced, available for everybody else to copy, incorporate, integrate, mash up, and build upon, what happens is an exponential curve. Every tiny idea is fed by a thousand other tiny ideas, and in turn spawns a new forest of tiny ideas, that together create another generation of tiny ideas.
+
+===== The Exponential Innovation Curve
+
+Gradually, all of these things start building up. People who are free to do and follow their passion start creating applications we can't even imagine; they build on other people's work and give ideas to other people who then build on top of these. The momentum increases; it takes a long time for that momentum to build up, it's very gradual at first.
+
+The key characteristic of an exponential curve is that, for the majority of its life cycle, it appears to be a slowly climbing, horizontal line. It looks like it's taking a very long time to catch up with that plateau of two hundred years of innovation. Then, surprise! Here's the one thing I can tell you about exponential curves: they have an elbow, and the elbow is the inflection point where the horizontal becomes vertical, where all the cumulative momentum building and building suddenly reaches that critical point. It starts accelerating faster and faster.
+
+It takes a very long time for these applications to reach parity, to appear to do the same thing that the established industry does. But the thing about an exponential curve is that one month after reaching parity, it's grown by an order of magnitude; in one year, it's grown by two orders of magnitude. While the traditional institution continues its slow horizontal curve, the exponential curve suddenly turns vertical.
+
+We've seen this happen on the Internet. We've seen this happen throughout many technologies in our lifetime. Ray Kurzweil, an esteemed author and futurist, has written a fantastic work called "The Singularity Is Near." I spoke recently at the Singularity University, which is an organization founded by Ray Kurzweil, and much of the discussion focused on issues of exponential growth. These exponential curves can be seen in many places in our post-industrial society: the acceleration of density of computer chips, computer memory, speed of processing, amount of data you can send through communication, the number of documents on the web, the number of documents on Wikipedia, the number of people connected to the Internet, the number of Internet-Of-Things systems connected to each other, the number of people working on Bitcoin, the number of contributions to Bitcoin Core, and the number of alternative blockchains poking up. All of these lines have one thing in common: they exhibit an exponential curve.
+
+When we look at these things through our human eyes, we tend to massively underestimate the impact of these exponential curves because we cannot fathom exponential growth. It is alien to nature, it only happens in very limited circumstances and it's always surprising. We extrapolate linearly; we see the past and we think that it will continue at the same pace in the future. What we miss is the elbow in the curve, when things turn vertical.
+
+The amount of data that you could fit on a storage device in the '60s was pitiful. You can watch photos online of IBM unloading a 5 MB hard drive from a truck, with four people carrying it. It takes a very long time to go from 5 MBs to 10 MBs to 100 MBs, but before long you stop counting in megabytes and you're counting in gigabytes, then terabytes, and the curve is vertical. We see this with data, we see this with participation on the Internet, and we're beginning to see it with Bitcoin.
+
+==== The Tsunami to Come
+
+I use the phrase "tsunami of innovation" because one characteristic of a tsunami -- a wave in the ocean, a massive disturbance in the liquid structure of the ocean -- is that the wave propagation happens at depth. If you're a fisherman and you're five hundred miles out from the coast, a tsunami passes and you can't even distinguish it from the other waves. It's a little slosh that passes you by; there's two hundred feet of slosh underneath that you can't see, and it's held at depth.
+
+Then the wave reaches the continental shelf. As it hits the edge of the continental shelf, it climbs, and by the time it hits the beach, it's two hundred feet high. If you were looking out in the ocean, it's like, "Oh, it's a little wave... Oh, it's a medium wave... Oh, it's a big wave- oh shit, run for the hills!"
+
+This is going to be the experience of institutionalized banking.
+
+This is going to be the experience of institutional regulation. This is going to be the experience of decentralized innovation on the Web. This is going to be the experience of applications of trust. This is going to be the experience of the blockchain-powered Internet-of-Things. Every organization that is observing this is going to say, "Oh, it's an interesting concept... Oh, it's kind of very interesting... Oh, it's getting kind of bigger...Oh shit! Run for the hills!"s
+
+The first indication you have, in fact, is that the water recedes. That's the wrong time to go sunbathing on the beach. Right now, it is very easy to underestimate the innovative potential of Bitcoin. Right now, you see the early-stage prototype. Right now, you see the beginnings of a system that has some promise; but its biggest promise is not in what is there, it's in what is to come. The reason the promise lies in what is to come, is because of the power of innovation without permission by individuals who have a particular interest. An interest that is not served, and will never be served, by the current system.
+
+==== Hyperlocal Solutions
+
+Let's look at just one example. Let's say you're a person with special needs. You have challenges with your hearing or sight; you have a cognitive problem, difficulty with numbers (_dysnumeria_) or with words (_dyslexia_). What will your bank to do to make your life easier? Can you ask them to modify the online banking application, to make it more suitable to you? Can you ask them to modify their ATMs, to make them more useful to you? With great resistance and delay, they might try to serve you. In fact, they'll be able to do it a lot more easily on the Web than they can do it on their ATM network or their physical locations.
+
+Now imagine what happens if you're a software engineer and you have a special need, or your best friend or your cousin has a special need. You look at Bitcoin and you say, "I don't have a good way of remembering PIN numbers. I would be much better served with pictures of animals." "My friend doesn't have a good way of visualizing small information. She would be better served by the information being magnified." "My cousin doesn't have good understanding of social engineering and cognitive threats. He / she might be better served by community management through a multi-signature approach."
+
+How many people do you need to persuade to write that application? No one. You write it, you improve the world in a tiny way for one person, and others will find it. They will say, "This is the application I've always been looking for! I have now been empowered by the innovation of a complete stranger, and I can use it."
+
+The tsunami builds, and the momentum builds, and every single developer operating in this space. We're not solving big, universal problems; we're solving small, local problems that matter to us. We control where we want to invest our creative energy and our passion. There is nothing in the world that can stop that energy once it gains momentum.
+
+*It is an absolute tsunami of innovation and it is coming.*
+
+Thank you.

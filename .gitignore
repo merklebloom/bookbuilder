@@ -1,0 +1,8 @@
+
+*.epub
+
+*.pdf
+
+_build/
+
+dist/

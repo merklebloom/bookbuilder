@@ -1,0 +1,8 @@
+= Book Title
+image::Cover.png["Book Cover",  align="center", width=336, height=504]
+
+<<<
+
+include::ChapterOne.asciidoc[]
+
+include::title_epub.asciidoc[]
