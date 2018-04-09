@@ -26,66 +26,73 @@ all:
 	# Usage
 	# LANG=en make [pdf, html, epub, kindle]
 
-html: clean create_html dist_html
+# FIXME: write this target
+# html:
 
-pdf: clean create_pdf dist_pdf
+pdf: create_pdf create_dist
+	if [ -f "${DIR}/${BOOK}.pdf" ]; then \
+		cp ${DIR}/${BOOK}.pdf ${DIST}/${LANG}/${TITLE}_${TAG}.pdf; \
+	fi
 
-epub: clean compress_images create_epub dist_epub
+epub: create_epub create_dist
+	if [ -f "${DIR}/${EBOOK}.epub" ]; then \
+		cp ${DIR}/${EBOOK}.epub ${DIST}/${LANG}/${TITLE}_${TAG}.epub; \
+	fi
 
-kindle: clean compress_images create_epub create_kindle dist_kindle
+kindle: create_kindle create_dist
+	if [ -f "${DIR}/${EBOOK}.mobi" ]; then \
+		cp ${DIR}/${EBOOK}.mobi ${DIST}/${LANG}/${TITLE}_${TAG}.mobi; \
+	fi
 
 
 #  ---------------------------------
 #  Private targets
 
-# Cleanup
+#  Remove the build directory
 clean:
 	if [ -d "${DIR}" ]; \
 		then rm -r ${DIR}; \
-	fi; \
+	fi
 
-
-#  If the build directory does not exist, create it
-create_folder:
+#  Recreate the build directory
+create_folder: clean
 	if [ ! -d "${DIR}" ]; then \
 		mkdir ${DIR}; \
 		cp -R -L ${ASCIIDOC_IMAGES} ${DIR}; \
 		cp images/* ${DIR}; \
 		cp chapters/${LANG}/* ${DIR}; \
 		cp conf/* ${DIR}; \
-	fi; \
+	fi
 
+#  Compress images before building ebook
 compress_images: create_folder
 	cd ${DIR}; \
 	for f in ${IMAGE_NAME}*.png; \
 		do mogrify -depth 4 -colorspace gray -resize 504x336 "$$f"; \
-	done; \
-
+	done
 
 #  Generate HTML
 create_html: create_folder
 	cd ${DIR}; \
-	asciidoc ${HTMLOPTS} --out-file=${BOOK}.html ${BOOK}.asciidoc; \
-
+	asciidoc ${HTMLOPTS} --out-file=${BOOK}.html ${BOOK}.asciidoc
 
 #  Generate PDF
 create_pdf: create_folder
 	export XML_CATALOG_FILES=${XML_CATALOG_FILES}; \
 	cd ${DIR}; \
-	a2x ${PDFOPTS} ${BOOK}.asciidoc; \
-
+	a2x ${PDFOPTS} ${BOOK}.asciidoc
 
 #  Generate EPUB
-create_epub: create_folder
+create_epub: compress_images
 	export XML_CATALOG_FILES=${XML_CATALOG_FILES}; \
 	cd ${DIR}; \
-	a2x ${EPUBOPTS} ${EBOOK}.asciidoc; \
+	a2x ${EPUBOPTS} ${EBOOK}.asciidoc
 
 #  Create Kindle version (ignoring the error that it outputs)
-create_kindle:
+create_kindle: create_epub
 	-if [ -d "${KINDLEGEN_PATH}" ]; then \
 		${KINDLEGEN_PATH}/kindlegen ${KINDLEGEN_OPTS} ${DIR}/${EBOOK}.epub; \
-	fi; \
+	fi
 
 create_dist:
 	if [ ! -d "${DIST}" ]; then \
@@ -93,19 +100,4 @@ create_dist:
 	fi; \
 	if [ ! -d "${DIST}/${LANG}" ]; then \
 		mkdir ${DIST}/${LANG}; \
-	fi; \
-
-dist_pdf: create_pdf create_dist
-	if [ -f "${DIR}/${BOOK}.pdf" ]; then \
-		cp ${DIR}/${BOOK}.pdf ${DIST}/${LANG}/${TITLE}_${TAG}.pdf; \
-	fi; \
-
-dist_epub: create_epub create_dist
-	if [ -f "${DIR}/${EBOOK}.epub" ]; then \
-		cp ${DIR}/${EBOOK}.epub ${DIST}/${LANG}/${TITLE}_${TAG}.epub; \
-	fi; \
-
-dist_kindle: create_kindle create_dist
-	if [ -f "${DIR}/${EBOOK}.mobi" ]; then \
-		cp ${DIR}/${EBOOK}.mobi ${DIST}/${LANG}/${TITLE}_${TAG}.mobi; \
-	fi; \
+	fi
