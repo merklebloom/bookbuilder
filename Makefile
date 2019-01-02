@@ -10,7 +10,7 @@ DIST = dist
 BOOK = master
 EBOOK = master_epub
 TAG = `git describe --tags --always`
-TITLE = TheInternetOfMoneyBonusChapter1
+TITLE = YourTitleHere
 HTMLOPTS = -a max-width=55em
 PDFOPTS = --format=pdf --conf-file=a2x.conf --fop --xsl-file=custom-docbook-styles.xsl -k --verbose
 KINDLEGEN_PATH = /usr/local/bin/
@@ -18,7 +18,7 @@ KINDLEGEN_OPTS = -c2
 EPUBOPTS = --format=epub --conf-file=a2x.conf --stylesheet=style.css
 ASCIIDOC_IMAGES = /etc/asciidoc/images
 XML_CATALOG_FILES = /usr/share/xml/docbook/schema/dtd/catalog.xml
-IMAGE_NAME=Cover
+IMAGE_NAME = cover
 
 #  ---------------------------------
 #  Public targets

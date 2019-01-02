@@ -1,16 +1,5 @@
 = Book Title
 
-#[preface]
-#include::preface.asciidoc[]
-
-#[dedication]
-#include::dedication.asciidoc[]
-
 include::title.asciidoc[]
 
 include::ChapterOne.asciidoc[]
-
-#[index]
-////
-== Index
-////
