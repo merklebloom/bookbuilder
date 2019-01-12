@@ -1,5 +1,5 @@
 [dedication]
-== {nbspc}
+= pass:[]
 [cols="^",width="100%",frame="none", grid="none"]
 |============================
 |

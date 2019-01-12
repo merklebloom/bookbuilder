@@ -1,16 +1,54 @@
 = Book Title
+////
+Settings
+////
+:doctype: book
+:toc:
+:toclevels: 6
+:media: prepress
+:imagesdir: .
+:icons: font
+:icon-set: fa
+////
+Available icon font sets
+fa: fontawesome
+octicon: Octicons
+fi: Foundation Icons
+pf: Payment Font
+////
+:pdf-page-size: 6in x 9in
+:pdf-style: cip-theme.yml
+:pdf-fontsdir: .
+:pdf-stylesdir: .
+////
+Book variables
+////
+:author: Author Name
+////
+Custom Variables
+////
+:BOOK_URL: https://www.amazon.com/something
+:TEST_IMAGE: dice.png
+ifndef::ebook-format[:leveloffset: 1]
 
-#[preface]
-#include::preface.asciidoc[]
+////
+[preface]
+include::preface.asciidoc[]
 
-#[dedication]
-#include::dedication.asciidoc[]
+[dedication]
+include::dedication.asciidoc[]
+////
 
 include::title.asciidoc[]
 
+<<<
+
 include::ChapterOne.asciidoc[]
 
-#[index]
 ////
+[appendix]
+include::appendix1.asciidoc[]
+
+[index]
 == Index
 ////
