@@ -1,31 +1,60 @@
-[dedication]
-= pass:[]
-[cols="^",width="100%",frame="none", grid="none"]
-|============================
-|
-|
-|
-|
-|
-| *Book Title*
-| _Book Subtitle_
-| _By Author Name_
-|
-|
-| https://example.com/
-|
-|
-|
-|
-|
-|
-|
-|
-|
-|
-|
-|
-|============================
+[discrete]
+= Colophon
+
+*{book_title}*
+
+_{subtitle}_
+
+_By {creator}_
+
+{web_URL}
+
+{nbsp}
+
+*Cover Design*
+
+Designer Name and website
+
+{nbsp}
+
+*Transcription and Editing*
+
+Editor Name and website
+
+{nbsp}
+
+*Copyediting*
+
+Copy Editor Name and website
+
+<<<
+
+
+{nbsp}
+{nbsp}
+
+_Copyright (C) {copyright_year} By {publisher}_
+
+_All rights reserved_
+
+
+{nbsp}
+
+*Publishing History*
+
+* First print: *October 1st, 2017*
+
+
+{nbsp}
+{nbsp}
+
+ifdef::backend-pdf[]
+ISBN: {print_ISBN}
+endif::[]
+ifdef::ebook-format[]
+ISBN: {ebook_ISBN}
+endif::[]
+
 <<<
 
 *Disclaimers:*
@@ -36,40 +65,4 @@
 
 *Licensing:*
 
-[small]#Licensing information and contact#
-
-<<<
-
-[cols="^",width="100%",frame="none", grid="none"]
-|============================
-|
-| *Book Title*
-| https://example.com/
-|
-| *Cover Design*
-| Name
-|
-| *Transcription and Editing*
-| Name
-|
-| *Copyediting*
-| Name
-|
-|
-| ISBN: 978-1-99999-99-0
-|
-| _Copyright (C) 2018 by Publisher LLC_
-| _All rights reserved_
-| {nbsp}
-| {nbsp}
-| First print: *October 1st, 2017*
-| {nbsp}
-| {nbsp}
-|
-| Errata Submissions:
-| mailto:mail@example.com[mail@example.com]
-| Licensing Requests:
-| mailto:mail@example.com[mail@example.com]
-| General:
-| mailto:mail@example.com[mail@example.com]
-|============================
+[small]#Licensing information#

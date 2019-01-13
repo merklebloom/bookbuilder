@@ -1,14 +1,11 @@
-= Book Title
 ////
-Settings
+	General Settings
 ////
 :doctype: book
 :toc:
 :toclevels: 6
-:media: prepress
 :imagesdir: .
-:icons: font
-:icon-set: fa
+
 ////
 Available icon font sets
 fa: fontawesome
@@ -16,20 +13,42 @@ octicon: Octicons
 fi: Foundation Icons
 pf: Payment Font
 ////
+:icons: font
+:icon-set: fa
+////
+	Print Variables
+////
+:autofit-option:
+:media: prepress
 :pdf-page-size: 6in x 9in
-:pdf-style: cip-theme.yml
+:pdf-style: theme.yml
 :pdf-fontsdir: .
 :pdf-stylesdir: .
 ////
-Book variables
+	ePUB variables
+////
+:front-cover-image: ebook-cover.png
+:epub3-stylesdir: .
+////
+	User variables
 ////
 :author: Author Name
-////
-Custom Variables
-////
-:BOOK_URL: https://www.amazon.com/something
+:creator: {author}
+:authors: {author}
+:book_title: The Book Title
+:doctitle: {book_title}
+:subtitle: Subtitle: A book subtitle
+:web_URL: www.example.com
+:print_ISBN: 978-1-999999-99-0
+:ebook_ISBN: 978-1-999999-99-0
+:copyright_year: 2019
+:publisher: Publisher LLC
 :TEST_IMAGE: dice.png
-ifndef::ebook-format[:leveloffset: 1]
+
+
+= {book_title}
+
+ifdef::backend-pdf[:leveloffset: 1]
 
 ////
 [preface]
@@ -39,9 +58,12 @@ include::preface.asciidoc[]
 include::dedication.asciidoc[]
 ////
 
+// Title is placed at the beginning in print, at the end in ebook
+ifdef::backend-pdf[]
 include::title.asciidoc[]
 
 <<<
+endif::[]
 
 include::ChapterOne.asciidoc[]
 
@@ -52,3 +74,8 @@ include::appendix1.asciidoc[]
 [index]
 == Index
 ////
+
+// Title is placed at the beginning in print, at the end in ebook
+ifdef::ebook-format[]
+include::title.asciidoc[]
+endif::[]

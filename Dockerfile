@@ -4,9 +4,11 @@ LABEL MAINTAINERS="Guillaume Scheibel <guillaume.scheibel@gmail.com>, Damien DUP
 
 ARG asciidoctor_version=1.5.8
 ARG asciidoctor_pdf_version=1.5.0.alpha.16
+ARG asciidoctor_epub_version=1.5.0.alpha.7
 
 ENV ASCIIDOCTOR_VERSION=${asciidoctor_version} \
-  ASCIIDOCTOR_PDF_VERSION=${asciidoctor_pdf_version}
+  ASCIIDOCTOR_PDF_VERSION=${asciidoctor_pdf_version} \
+  ASCIIDOCTOR_EPUB_VERSION=${asciidoctor_epub_version}
 
 # Installing package required for the runtime of
 # any of the asciidoctor-* functionnalities
@@ -40,8 +42,7 @@ RUN apk add --no-cache --virtual .rubymakedepends \
   && gem install --no-document \
     "asciidoctor:${ASCIIDOCTOR_VERSION}" \
     asciidoctor-confluence \
-#    asciidoctor-diagram \
-    asciidoctor-epub3:1.5.0.alpha.7 \
+    "asciidoctor-epub3:${ASCIIDOCTOR_EPUB_VERSION}" \
     asciidoctor-mathematical \
     asciimath \
     "asciidoctor-pdf:${ASCIIDOCTOR_PDF_VERSION}" \

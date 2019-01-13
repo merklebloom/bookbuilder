@@ -7,24 +7,24 @@ endif
 #  Constants
 DIR = _build
 DIST = dist
-BOOK = master
-EBOOK = master_epub
+BOOKFILE = master
 TAG = `git describe --tags --always`
-TITLE = BookTitle
-ADOCFONTSDIR =  /usr/lib/ruby/gems/2.4.0/gems/asciidoctor-pdf-1.5.0.alpha.16/data/fonts/
+TITLE = TheBookTitle
+RUBYDIR = /usr/lib/ruby/gems/2.4.0/gems/
+ADOCFONTSDIR =  ${RUBYDIR}/asciidoctor-pdf-1.5.0.alpha.16/data/fonts/
+EPUBCSSDIR= ${RUBYDIR}/asciidoctor-epub3-1.5.0.alpha.7/data/styles/
 TTFFONTSDIR = /usr/share/fonts/
 KINDLEGEN_PATH = /usr/local/bin/
 KINDLEGEN_OPTS = -c2
-EPUBOPTS = -f epub --stylesheet=epub3-css3-only.css
-ASCIIDOC_IMAGES = /etc/asciidoc/images
+
+PDFOPTS = -a lang=${LANG}
+EPUBOPTS = -a lang=${LANG}
 
 #  ---------------------------------
 #  Public targets
-all:
+all: pdf epub
 	# Usage
 	# LANG=en make [pdf, html, epub, kindle]
-
-html: clean create_html dist_html
 
 pdf: clean create_pdf dist_pdf
 
@@ -40,10 +40,11 @@ create_folder:
 	if [ ! -d "${DIR}" ]; then \
 		mkdir ${DIR}; \
 	fi; \
-	cp -v -R -L ${ASCIIDOC_IMAGES} ${DIR}; \
-	cp -v images/* ${DIR}; \
-	cp -v chapters/${LANG}/* ${DIR}; \
-	cp -v conf/* ${DIR}; \
+	cp -u images/* ${DIR}; \
+	cp -u chapters/${LANG}/* ${DIR}; \
+	cp -u ${EPUBCSSDIR}/* ${DIR};
+	cp -u conf/* ${DIR}; \
+
 
 copy_fonts:
 	find ${TTFFONTSDIR} -name *ttf -exec cp -u {} ${DIR} \;
@@ -56,29 +57,26 @@ compress_images: create_folder
 		do mogrify -depth 4 -colorspace gray -resize 504 "$$f"; \
 	done; \
 
-#  Generate HTML
-create_html: create_folder
-	cd ${DIR}; \
-	asciidoctor ${HTMLOPTS} --out-file=${EBOOK}.html ${EBOOK}.asciidoc; \
-
 #  Generate PDF
 create_pdf: create_folder copy_fonts
 	cd ${DIR}; \
-	asciidoctor-pdf --verbose master.asciidoc
+	asciidoctor-pdf --verbose ${PDFOPTS} ${BOOKFILE}.asciidoc
 
 create_epub: create_folder copy_fonts
 	cd ${DIR}; \
-	asciidoctor-epub3 --verbose master.asciidoc
+	asciidoctor-epub3 --verbose ${EPUBOPTS} ${BOOKFILE}.asciidoc
 
 create_dist:
-	if [ ! -d "${DIST}" ]; then \
-		mkdir ${DIST}; \
-	fi; \
 	if [ ! -d "${DIST}/${LANG}" ]; then \
-		mkdir ${DIST}/${LANG}; \
+		mkdir -p ${DIST}/${LANG}; \
 	fi; \
 
 dist_pdf: create_dist
-	if [ -f "${DIR}/${BOOK}.pdf" ]; then \
-		cp ${DIR}/${BOOK}.pdf ${DIST}/${LANG}/${TITLE}_${TAG}.pdf; \
+	if [ -f "${DIR}/${BOOKFILE}.pdf" ]; then \
+		cp ${DIR}/${BOOKFILE}.pdf ${DIST}/${LANG}/${TITLE}_${TAG}.pdf; \
+	fi; \
+
+dist_epub: create_dist
+	if [ -f "${DIR}/${BOOKFILE}.epub" ]; then \
+		cp ${DIR}/${BOOKFILE}.epub ${DIST}/${LANG}/${TITLE}_${TAG}.epub; \
 	fi; \
