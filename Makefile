@@ -10,6 +10,7 @@ DIST = dist
 BOOKFILE = master
 TAG = `git describe --tags --always`
 TITLE = TheBookTitle
+
 RUBYDIR = /usr/lib/ruby/gems/2.4.0/gems/
 ADOCFONTSDIR =  ${RUBYDIR}/asciidoctor-pdf-1.5.0.alpha.16/data/fonts/
 EPUBCSSDIR= ${RUBYDIR}/asciidoctor-epub3-1.5.0.alpha.7/data/styles/
@@ -29,6 +30,8 @@ all: pdf epub
 pdf: clean create_pdf dist_pdf
 
 epub: clean create_epub dist_epub
+
+kindle: clean create_kindle dist_kindle
 
 clean:
 	if [ -d "${DIR}" ]; \
@@ -66,6 +69,10 @@ create_epub: create_folder copy_fonts
 	cd ${DIR}; \
 	asciidoctor-epub3 --verbose ${EPUBOPTS} ${BOOKFILE}.asciidoc
 
+create_kindle: create_folder copy_fonts
+	cd ${DIR}; \
+	asciidoctor-epub3 -a ebook-format=kf8 --verbose ${EPUBOPTS} ${BOOKFILE}.asciidoc
+
 create_dist:
 	if [ ! -d "${DIST}/${LANG}" ]; then \
 		mkdir -p ${DIST}/${LANG}; \
@@ -79,4 +86,9 @@ dist_pdf: create_dist
 dist_epub: create_dist
 	if [ -f "${DIR}/${BOOKFILE}.epub" ]; then \
 		cp ${DIR}/${BOOKFILE}.epub ${DIST}/${LANG}/${TITLE}_${TAG}.epub; \
+	fi; \
+
+dist_kindle: create_dist
+	if [ -f "${DIR}/${BOOKFILE}.mobi" ]; then \
+		cp ${DIR}/${BOOKFILE}.mobi ${DIST}/${LANG}/${TITLE}_${TAG}.mobi; \
 	fi; \
