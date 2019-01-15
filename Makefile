@@ -23,9 +23,9 @@ EPUBOPTS = -a lang=${LANG}
 
 #  ---------------------------------
 #  Public targets
-all: pdf epub
+all: pdf epub kindle
 	# Usage
-	# LANG=en make [pdf, html, epub, kindle]
+	# make [LANG=xx] {pdf, epub, kindle}
 
 pdf: clean create_pdf dist_pdf
 
