@@ -1,5 +1,7 @@
 # bookbuilder
 
+![](https://img.shields.io/docker/build/merklebloom/bookbuilder.svg)
+
 A book build system that produces PDF, EPUB and MOBI from asciidoc to Amazon specifications.
 
 # Book structure
@@ -88,7 +90,7 @@ EPUB and MOBI (Kindle) book styling is controlled by CSS files `conf/epub3.css` 
 
 # Attribution
 
-The build system (/conf, Makefile) is forked and heavily modified from https://github.com/akosma/eBook-Template, which is public domain. The Dockerfile is from https://github.com/asciidoctor/docker-asciidoctor. 
+The build system (/conf, Makefile) is forked and heavily modified from https://github.com/akosma/eBook-Template, which is public domain. The Dockerfile is from https://github.com/asciidoctor/docker-asciidoctor.
 
 # License
 

@@ -1,6 +1,7 @@
+# derived from asciidoctor/docker-asciidoctor by merklebloom and @aantonop
 FROM alpine:3.7
 
-LABEL MAINTAINERS="Guillaume Scheibel <guillaume.scheibel@gmail.com>, Damien DUPORTAL <damien.duportal@gmail.com>"
+LABEL MAINTAINERS="Andreas M. Antonopoulos @aantonop"
 
 ARG asciidoctor_version=1.5.8
 ARG asciidoctor_pdf_version=1.5.0.alpha.16
