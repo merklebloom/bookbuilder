@@ -1,6 +1,6 @@
 # bookbuilder
 
-![](https://img.shields.io/docker/build/merklebloom/bookbuilder.svg)
+![](https://img.shields.io/github/license/merklebloom/bookbuilder.svg)
 
 A book build system that produces PDF, EPUB and MOBI from asciidoc to Amazon specifications.
 
@@ -26,12 +26,28 @@ Books are built as PDF, EPUB or MOBI using the asciidoctor, asciidoctor-pdf and 
 
 ## Docker container
 
-After installing docker, create a `bookbuilder` Docker container image from this repository as follows:
+All the necessary dependencies to run bookbuilder are included in a docker container, which makes things a lot easier when operating bookbuilder across different operating systems. First, get [docker](https://docker.com/get-started) for your operating system and install it. Ubuntu instructions are [here](https://docs.docker.com/install/linux/docker-ce/ubuntu/).
+
+Note: You don't have to use the docker container. You can install the necessary tools on your operating system directly. However, this is much more difficult as each operating system uses different installation paths and the versions and capabilities may differ. The bookbuilder Makefile is optimized to work from within the docker container. 
+
+### Pulling the container image from DockerHub
+
+The docker container is published on Docker Hub as `merklebloom/bookbuilder`. Pull the latest version like this:
+
+```
+sudo docker pull merklebloom/bookbuilder
+```
+
+### Building the container image from this repository
+
+Instead of pulling the docker container from docker hub, you can also build it from this repository, if you've already cloned it:
 
 ```
 $ cd bookbuilder
 $ sudo docker image build $(pwd) -t bookbuilder
 ```
+
+### Running the bookbuilder container
 
 Run the container, mapping the current directory (pwd = `bookbuilder`) to the container's `/documents/` folder:
 
@@ -39,6 +55,8 @@ Run the container, mapping the current directory (pwd = `bookbuilder`) to the co
 $ sudo -H docker run -it -v $(pwd):/documents/ bookbuilder
 bash-4.4#
 ```
+
+At the `bash` prompt, you can run the `make` commands, as detailed below, to build book files.
 
 ## Building books in PDF. EPUB and MOBI
 
