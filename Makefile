@@ -80,15 +80,15 @@ create_dist:
 
 dist_pdf: create_dist
 	if [ -f "${DIR}/${BOOKFILE}.pdf" ]; then \
-		cp ${DIR}/${BOOKFILE}.pdf ${DIST}/${LANG}/${TITLE}_${TAG}.pdf; \
+		cp ${DIR}/${BOOKFILE}.pdf "${DIST}/${LANG}/${TITLE}_${TAG}.pdf"; \
 	fi; \
 
 dist_epub: create_dist
 	if [ -f "${DIR}/${BOOKFILE}.epub" ]; then \
-		cp ${DIR}/${BOOKFILE}.epub ${DIST}/${LANG}/${TITLE}_${TAG}.epub; \
+		cp ${DIR}/${BOOKFILE}.epub "${DIST}/${LANG}/${TITLE}_${TAG}.epub"; \
 	fi; \
 
 dist_kindle: create_dist
 	if [ -f "${DIR}/${BOOKFILE}.mobi" ]; then \
-		cp ${DIR}/${BOOKFILE}.mobi ${DIST}/${LANG}/${TITLE}_${TAG}.mobi; \
+		cp ${DIR}/${BOOKFILE}.mobi "${DIST}/${LANG}/${TITLE}_${TAG}.mobi"; \
 	fi; \
