@@ -3,14 +3,6 @@ FROM alpine:3.7
 
 LABEL MAINTAINERS="Andreas M. Antonopoulos @aantonop"
 
-ARG asciidoctor_version=1.5.8
-ARG asciidoctor_pdf_version=1.5.0.alpha.16
-ARG asciidoctor_epub_version=1.5.0.alpha.7
-
-ENV ASCIIDOCTOR_VERSION=${asciidoctor_version} \
-  ASCIIDOCTOR_PDF_VERSION=${asciidoctor_pdf_version} \
-  ASCIIDOCTOR_EPUB_VERSION=${asciidoctor_epub_version}
-
 # Installing package required for the runtime of
 # any of the asciidoctor-* functionnalities
 RUN apk add --no-cache \
@@ -33,6 +25,30 @@ RUN apk add --no-cache \
     ttf-dejavu \
     unzip \
     which
+
+# Installing Python dependencies for additional
+# functionnalities as diagrams or syntax highligthing
+RUN apk add --no-cache --virtual .pythonmakedepends \
+    build-base \
+    python2-dev \
+    py2-pip \
+  && pip install --upgrade pip \
+  && pip install --no-cache-dir \
+    actdiag \
+    'blockdiag[pdf]' \
+    nwdiag \
+    Pygments \
+    seqdiag \
+  && apk del -r --no-cache .pythonmakedepends
+
+
+ARG asciidoctor_version=2.0.10
+ARG asciidoctor_pdf_version=1.5.3
+ARG asciidoctor_epub_version=1.5.0.alpha.17
+
+ENV ASCIIDOCTOR_VERSION=${asciidoctor_version} \
+  ASCIIDOCTOR_PDF_VERSION=${asciidoctor_pdf_version} \
+  ASCIIDOCTOR_EPUB_VERSION=${asciidoctor_epub_version}
 
 # Installing Ruby Gems needed in the image
 # including asciidoctor itself
@@ -60,20 +76,8 @@ RUN apk add --no-cache --virtual .rubymakedepends \
     tilt \
   && apk del -r --no-cache .rubymakedepends
 
-# Installing Python dependencies for additional
-# functionnalities as diagrams or syntax highligthing
-RUN apk add --no-cache --virtual .pythonmakedepends \
-    build-base \
-    python2-dev \
-    py2-pip \
-  && pip install --upgrade pip \
-  && pip install --no-cache-dir \
-    actdiag \
-    'blockdiag[pdf]' \
-    nwdiag \
-    Pygments \
-    seqdiag \
-  && apk del -r --no-cache .pythonmakedepends
+
+RUN echo "umask 0000" > /root/.bashrc
 
 WORKDIR /documents
 VOLUME /documents
