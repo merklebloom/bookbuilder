@@ -16,29 +16,32 @@ RUN apk add --no-cache \
     inotify-tools \
     make \
     openjdk8-jre \
-    py2-pillow \
+    py3-pillow \
     py-setuptools \
-    python2 \
+    python3 \
     ruby \
     ruby-mathematical \
     ttf-liberation \
     ttf-dejavu \
     unzip \
-    which
+    which \
+	zlib-dev \
+	imagemagick 
 
 # Installing Python dependencies for additional
 # functionnalities as diagrams or syntax highligthing
 RUN apk add --no-cache --virtual .pythonmakedepends \
     build-base \
-    python2-dev \
-    py2-pip \
-  && pip install --upgrade pip \
-  && pip install --no-cache-dir \
+    python3-dev \
+    py3-pip \
+  && pip3 install --upgrade pip \
+  && pip3 install --no-cache-dir \
     actdiag \
     'blockdiag[pdf]' \
     nwdiag \
     Pygments \
     seqdiag \
+	transifex-client \
   && apk del -r --no-cache .pythonmakedepends
 
 
